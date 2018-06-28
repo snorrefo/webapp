@@ -1,5 +1,7 @@
 # webapp
 
+[![Build Status](https://travis-ci.org/snorrefo/webapp.svg?branch=master)](https://travis-ci.org/snorrefo/webapp)
+
 Simple SPA for displaying logging data from a MQTT server and making control calls to a http API. Built with a docker service ```web``` for a Flask http server, and a service ```mqtt-mosquitto``` for a [Mosquitto](https://mosquitto.org/) MQTT broker.
 
 For local use and development only.
