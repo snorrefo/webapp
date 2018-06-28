@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <!-- CSS -->
+    <style>
+      .container {
+        border: 1px solid coral;
+      }
+      .col-sm {
+        border: 1px solid blue;
+      }
+      .status-msg {
+        display: none;
+      }
+    </style>
+    <link rel="stylesheet" type='text/css' href="{{ url_for('static', filename='metricsgraphics.css') }}">
+
+    <!-- jQuery 3.3.1 -->
+    <!-- https://www.srihash.org/ -->
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+
+    <title>Plots</title>
+  </head>
+  <body>
+
+    <!-- Tab Plots start -->
+    <div id="plots" class="container-fluid">
+      <!-- <div class="container"> -->
+      <div class="row">
+        <div class="col-sm">
+          <!-- Plot start -->
+          <p>
+            <span class="badge badge-secondary" id="mqttstatus_btn">MQTT status: not connected</span>
+          </p>
+          Plots
+          <div id='plot'></div>
+          <div id='legend'></div>
+        </div> <!-- col-sm -->
+      </div> <!-- row -->
+    </div> <!-- container-fluid main -->
+    <!-- Tab Logging and Control end -->
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <script src="https://unpkg.com/paho-mqtt@1.0.4/paho-mqtt.js" integrity="sha384-ppmY77WXZ8OjQhq2RZuM43luA+2exm47zyVUQxxFCE60q4xY4aZ3GVu/6nKFDyQX" crossorigin="anonymous"></script>
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/metrics-graphics/2.15.3/metricsgraphics.js"></script>
+
+    <script src="{{ url_for('static', filename='plots.js') }}" type="text/javascript"></script>
+
+  </body>
+</html>

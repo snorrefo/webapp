@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  web:
+    build: ./web
+    volumes:
+      - ./web:/code
+    command: ["python", "wsgi.py"]
+    # command: ["gunicorn", "-w", "4", "-b", "0.0.0.0:5000", "wsgi:app"]
+    # command: ["pytest"]
+    depends_on:
+      - "mqtt"
+    ports:
+      - "5000:5000"
+
+  mqtt:
+    build: ./mqtt-mosquitto
+    ports:
+      - "1883:1883" # standard http
+      - "9001:9001" # websockets

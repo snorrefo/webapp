@@ -1,0 +1,10 @@
+# required for docker
+sudo: required
+language: python
+python:
+    - "3.6"
+services:
+  - docker
+script:
+  - docker-compose build
+  - docker-compose run web pytest # or py.test for Python versions 3.5 and below

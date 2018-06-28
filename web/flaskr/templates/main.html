@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <!-- CSS -->
+    <style>
+      .container {
+        border: 1px solid coral;
+      }
+      .col-sm {
+        border: 1px solid blue;
+      }
+      .status-msg {
+        display: none;
+      }
+    </style>
+
+    <!-- jQuery 3.3.1 -->
+    <!-- https://www.srihash.org/ -->
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+
+    <title>Main</title>
+  </head>
+  <body>
+
+
+    <!-- Tab Logging and Control start -->
+    <div id="main" class="container-fluid">
+      <!-- <div class="container"> -->
+      <div class="row">
+        <div class="col-sm">
+          <!-- Logging start -->
+          <p>
+            <span class="badge badge-secondary" id="mqttstatus_btn">MQTT status: not connected</span>
+          </p>
+          <!-- https://www.w3schools.com/Jquery/jquery_dom_set.asp -->
+          <p>
+            ch101: <input type="text" class="form-control" placeholder="-" id="ch101_read" readonly>
+            <button class="btn btn-secondary" id="ch101_btn">Toggle</button>
+            <div class="status-msg" id="ch101_msg"></div>
+          </p>
+          <p>
+            ch102: <input type="text" class="form-control" placeholder="-" id="ch102_read" readonly>
+            <button class="btn btn-secondary" id="ch102_btn">Toggle</button>
+            <div class="status-msg" id="ch102_msg"></div>
+          </p>
+          <!-- Logging end -->
+        </div> <!-- col-sm -->
+
+
+        <div class="col-sm">
+          <!-- Control start -->
+
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Speed:</span>
+            </div>
+            <input type="text" class="form-control" id="Speed_write" placeholder="0-100" aria-label="Speed" required>
+            <div class="input-group-append">
+              <span class="input-group-text">%</span>
+              <button class="btn btn-primary" id="Speed_btn" type="button">Set</button>
+            </div>
+          </div>
+
+          <span class="badge badge-secondary" id="Speed_APIstatus_btn">API status</span>
+          <input type="text" class="form-control status-msg" placeholder="-" id="Speed_APIstatus_msg" readonly>
+
+          <span class="badge badge-secondary" id="Speed_controlstatus_btn">Control status</span>
+          <input type="text" class="form-control status-msg" placeholder="-" id="Speed_controlstatus_msg" readonly>
+
+          <!-- Control end -->
+        </div> <!-- col-sm -->
+      </div> <!-- row -->
+    </div> <!-- container-fluid main -->
+    <!-- Tab Logging and Control end -->
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <script src="https://unpkg.com/paho-mqtt@1.0.4/paho-mqtt.js" integrity="sha384-ppmY77WXZ8OjQhq2RZuM43luA+2exm47zyVUQxxFCE60q4xY4aZ3GVu/6nKFDyQX" crossorigin="anonymous"></script>
+
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+    <script src="{{ url_for('static', filename='main.js') }}" type="text/javascript"></script>
+
+  </body>
+</html>
