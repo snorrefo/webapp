@@ -24,7 +24,6 @@ MQTT_PORT = 1883
 MQTT_TIMEOUT = 60
 
 
-
 def on_connect(client, userdata, flags, rc):
     """
     The callback for when the client receives a
@@ -93,7 +92,6 @@ def create_app():
 
         def delete(self, output_id):
             pass
-
 
         def put(self, output_id):
 
